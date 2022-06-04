@@ -1,91 +1,91 @@
-import React, { useEffect } from 'react'
-import './CustomTextInput.scss'
+import React, { useEffect } from 'react';
+import './CustomTextInput.scss';
 import classNames from 'classnames';
 
-const KEYBOARD_KEY_ENTER = 'Enter'
+const KEYBOARD_KEY_ENTER = 'Enter';
 
-type inputValueType = string | number
+type inputValueType = string | number;
 
-type inputTypes = 'text' | 'number' | undefined
+type inputTypes = 'text' | 'number' | undefined;
 
 const isInputValueUnChanged = (oldValue: string, newValue: string) => {
   return oldValue !== newValue;
-}
+};
 
 interface CustomTextInputProps {
-  className?: string
-  value: string
-  onBlur?: (name: string, value: inputValueType) => void
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
-  name:string
-  label: string
-  onCancel?: () => void
-  inputType?: inputTypes
+  className?: string;
+  value: string;
+  onBlur?: (name: string, value: inputValueType) => void;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  name: string;
+  label: string;
+  onCancel?: () => void;
+  inputType?: inputTypes;
 }
 
 const CustomTextInputComp = ({
-                               className = '',
-                               value,
-                               onBlur = () => {
-                                 return;
-                               },
-                               onChange,
-                               name,
-                               label,
-                               onCancel = () => {
-                                 return;
-                               },
-                             }: CustomTextInputProps) => {
-  const [isActive, setIsActive] = React.useState(false)
-  const textInputRef = React.createRef<HTMLInputElement>()
+  className = '',
+  value,
+  onBlur = () => {
+    return;
+  },
+  onChange,
+  name,
+  label,
+  onCancel = () => {
+    return;
+  },
+}: CustomTextInputProps) => {
+  const [isActive, setIsActive] = React.useState(false);
+  const textInputRef = React.createRef<HTMLInputElement>();
 
   useEffect(() => {
     if (isActive && textInputRef && textInputRef.current && textInputRef.current.focus) {
-      textInputRef.current.focus()
+      textInputRef.current.focus();
     }
-  }, [isActive, textInputRef])
+  }, [isActive, textInputRef]);
 
   const onInputBlur = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const newValue = event?.target?.value
+    const newValue = event?.target?.value;
 
     if (!newValue || isInputValueUnChanged(String(value), newValue)) {
-      setIsActive(false)
-      return
+      setIsActive(false);
+      return;
     }
-    setIsActive(false)
-    onBlur(name, newValue)
-  }
+    setIsActive(false);
+    onBlur(name, newValue);
+  };
 
   const onCustomTextInputClick = () => {
     if (textInputRef && textInputRef.current && textInputRef.current.value) {
-      textInputRef.current.value = ''
+      textInputRef.current.value = '';
     }
-    setIsActive(true)
-  }
+    setIsActive(true);
+  };
 
   const onInputKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event && event.key && event.key === KEYBOARD_KEY_ENTER) {
-      const newValue = textInputRef.current?.value || ''
+      const newValue = textInputRef.current?.value || '';
 
       if (!newValue) {
-        setIsActive(false)
-        return
+        setIsActive(false);
+        return;
       }
 
-      setIsActive(false)
-      onBlur(name, newValue)
+      setIsActive(false);
+      onBlur(name, newValue);
     }
-  }
+  };
 
   return (
     <div className={classNames('CustomTextInput', className)} onClick={onCustomTextInputClick}>
-      <div className='label'>{`${label}`}</div>
-      <div className='text-input'>
-      <span className='input-value' style={{ display: isActive ? 'none' : 'block' }}>
-      {value}
-      </span>
+      <div className="label">{`${label}`}</div>
+      <div className="text-input">
+        <span className="input-value" style={{ display: isActive ? 'none' : 'block' }}>
+          {value}
+        </span>
         <input
-          className='input-value'
+          className="input-value"
           style={{ display: isActive ? 'block' : 'none' }}
           ref={textInputRef}
           onBlur={onInputBlur}
@@ -95,6 +95,6 @@ const CustomTextInputComp = ({
       </div>
     </div>
   );
-}
+};
 
-export const CustomTextInput = React.memo(CustomTextInputComp)
+export const CustomTextInput = React.memo(CustomTextInputComp);
