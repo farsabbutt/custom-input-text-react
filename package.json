@@ -1,12 +1,12 @@
 {
   "name": "custom-input-text-react",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A custom input text component for react",
   "main": "index.js",
   "scripts": {
     "test": "jest --config jestconfig.json",
     "build": "tsc",
-    "format": "prettier --write \"src/**/*.ts\"",
+    "format": "prettier --write \"src/**/*.tsx\"",
     "lint": "tslint -p tsconfig.json",
     "prepare": "npm run build",
     "prepublishOnly": "npm test && npm run lint",
