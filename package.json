@@ -1,7 +1,7 @@
 {
-  "name": "my-new-typescript-package",
+  "name": "custom-input-text-react",
   "version": "1.0.0",
-  "description": "",
+  "description": "A custom input text component for react",
   "main": "index.js",
   "scripts": {
     "test": "jest --config jestconfig.json",
