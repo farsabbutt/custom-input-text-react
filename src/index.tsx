@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import './CustomTextInput.scss';
+import './CustomTextInput.css';
 import classNames from 'classnames';
 
 const KEYBOARD_KEY_ENTER = 'Enter';
