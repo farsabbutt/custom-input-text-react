@@ -24,18 +24,18 @@ interface CustomTextInputProps {
 }
 
 const CustomTextInputComp = ({
-                               className = '',
-                               value,
-                               onBlur = () => {
-                                 return;
-                               },
-                               onChange,
-                               name,
-                               label,
-                               onCancel = () => {
-                                 return;
-                               },
-                             }: CustomTextInputProps) => {
+  className = '',
+  value,
+  onBlur = () => {
+    return;
+  },
+  onChange,
+  name,
+  label,
+  onCancel = () => {
+    return;
+  },
+}: CustomTextInputProps) => {
   const [isActive, setIsActive] = React.useState(false);
   const textInputRef = React.createRef<HTMLInputElement>();
 
