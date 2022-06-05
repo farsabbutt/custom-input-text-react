@@ -1,3 +1,9 @@
 .CustomTextInput .label {
   font-weight: bold;
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.CustomTextInput .text-input {
+  display: inline-block;
 }
