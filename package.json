@@ -1,6 +1,6 @@
 {
   "name": "custom-input-text-react",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "A custom input text component for react",
   "main": "lib/index.js",
   "scripts": {
