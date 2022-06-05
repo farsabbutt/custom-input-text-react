@@ -6,8 +6,6 @@ const KEYBOARD_KEY_ENTER = 'Enter';
 
 type inputValueType = string | number;
 
-type inputTypes = 'text' | 'number' | undefined;
-
 const isInputValueUnChanged = (oldValue: string, newValue: string) => {
   return oldValue === newValue;
 };
@@ -20,7 +18,6 @@ interface CustomTextInputProps {
   name: string;
   label: string;
   onCancel?: () => void;
-  inputType?: inputTypes;
 }
 
 const CustomTextInputComp = ({
