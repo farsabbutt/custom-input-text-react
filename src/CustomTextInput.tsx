@@ -9,7 +9,7 @@ type inputValueType = string | number;
 type inputTypes = 'text' | 'number' | undefined;
 
 const isInputValueUnChanged = (oldValue: string, newValue: string) => {
-  return oldValue !== newValue;
+  return oldValue === newValue;
 };
 
 interface CustomTextInputProps {
