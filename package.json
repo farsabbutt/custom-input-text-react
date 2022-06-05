@@ -2,7 +2,7 @@
   "name": "custom-input-text-react",
   "version": "3.0.0",
   "description": "A custom input text component for react",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "jest --config jestconfig.json",
     "build": "tsc && yarn copy-files",
