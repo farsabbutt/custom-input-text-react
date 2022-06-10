@@ -1,4 +1,4 @@
-# :gift: Custom Input Text React [![npm version](https://img.shields.io/badge/npm-5.0.0-blue)](https://www.npmjs.com/package/custom-input-text-react)
+# :gift: Custom Input Text React [![npm version](https://img.shields.io/npm/v/custom-input-text-react)](https://www.npmjs.com/package/custom-input-text-react)
 
 An Editable text input component for react.
 
